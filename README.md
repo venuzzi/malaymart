@@ -103,12 +103,14 @@ https://malaymart.adaptable.app
     Kesimpulannya, XML digunakan untuk merepresentasikan data struktural dengan struktur yang ketat. JSON digunakan untuk merepresentasikan data dalam bentuk objek dengan sintaks yang lebih ringkas. Sementara HTML digunakan untuk membangun halaman pada web dan menampilkan konten secara visual.
 
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
     Pada zaman aplikasi web modern saat ini, JSON merupakan format yang paling sering digunakan untuk melakukan pertukaran data. Alasannya adalah:
     - Memiliki kecepatan pertukaran data dan hasil pencarian web yang tinggi. Hal ini akan memungkinkan komunikasi yang lebih cepat antar klien dan server.
     - JSON berbasis teks, lebih ringan, dan mempunyai format data yang mudah untuk diuraikan karena tidak memerlukan kode tambahan untuk melakukan penguraian.
     - JSON mempunyai dukungan untuk Cross-Platform sehingga format ini dapat digunakan untuk berbagai platform yang ada saat ini seperti smartphone, dan lain-lain.
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step?
+
     Checklist pertama:
     - Membuat berkas baru pada direktori `main` dengan nama `forms.py` dan tambahkan kode yang tersedia kedalam berkas tersebut.
     - Menambahkan beberapa import yang sudah tersedia pada berkas `views.py` yang berada di dalam direktori `main`.
