@@ -145,3 +145,93 @@ https://malaymart.adaptable.app
 
     - JSON by ID
      ![Alt text](image-7.png)
+
+
+# Tugas 4
+
+1. Apa itu Django `UserCreationForm`, dan jelaskan apa kelebihan dan kekurangannya?
+
+    Django `UserCreationForm` adalah sebuah modul build-in yang meng-inherit dari class `ModelForm`. Modul tersebut digunakan untuk membuat user yang baru. `UserCreationForm` memiliki tiga fiels, yaitu: `username`, `password1`, dan `password2`.
+    Kelebihan :
+    - `UserCreationForm`sudah merupakan modul built-in, sehingga tidak perlu menulis sendiri logika pendaftaran pengguna.
+    - `UserCreationForm` dapat dengan mudah disesuaikan dengan kebutuhan kita masing-masing.
+    Kekurangan:
+    - Logika atau tampilan dari `UserCreationForm` mungkin tidak sesuai dengan keinginan kita, sehingga kita perlu menyesuaikan atau membuat *form* kustom.
+    - `UserCreationForm` memiliki ketergantungan pada Django, sehingga akan sulit ketika kita memilih untuk menggunakan *framework* lainnya.
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+    Dalam konteks Django, autentikasi dan otorisasi adalah dua hal yang sangat penting dalam mengelola akses pengguna ke aplikasi web. Perbedaan keduanya adalah:
+    - Autentikasi = Proses yang memverifikasi identitas pengguna yang mencoba unutk mengakses aplikasi. Contohnya adalah proses login.
+    - Otorisasi = Proses yang terjadi setelah pengguna berhasil melakukan autentikasi. Hal ini mengacu pada kontrol yang diberikan kepada pengguna yang terautentikasi untuk mengakses atau melakukan tindakan tertentu dalam aplikasi.
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+    *Cookies* adalah salah satu cara untuk menyimpan informasi dalam bentuk teks di sisi klien. Informasi ini dapat digunakan oleh *server web* untuk mengidentifikasi dan melacak sesi pengguna atau menyimpan data yang diperlukan untuk interaksi antar pengguna. Cara Django menggunakan cookies adalah dengan menyimpan data sesi pengguna, menggunakan *session middleware*, mendapatkan kunci unik, mengamankan data, dan mengatur waktu kadaluwarsa sesi.
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+    Secara umum, penggunaan *cookies* aman secara default dalam pengembangan web jika digunakan dengan benar dan jika diikuti dengan prinsip keamanan yang baik. Namun, ada beberapa potensial resiko yang harus diwaspadai, seperti:
+    - Serangan Cross-Site Scripting (XSS).
+    - Serangan Cross-Site Request Forgery (CSRF).
+    - Enkripsikan data sensitif.
+    - Pemantauan cookie, hapus cookie yang tidak lagi diperlukan atau kadaluwarsa.
+    - Pemisahan cookie yang digunakan untuk tujuan berbeda.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    Checklist pertama: 
+    
+        - Jalankan virtual environment.
+        - Buka berkas `views.py` di subdirektori `main`.
+        - Tambahkan import `redirect`, `UserCreationForm`, dan `messages`.
+        - Tambahkan potongan kode yang tersedia ke dalam fungsi `register`.
+        - Buat berkas HTML dengan nama `register.html` pada folder `main/templates` dan isi dengan kode yang tersedia.
+        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `register` yang telah dibuat.
+        - Tambahkan path url ke dalam `urlpatterns`.
+        - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `login_user` yang menerima parameter `request`.
+        - Tambahkan import `aunthenticate` dan `login`.
+        - Tambahkan kode yang tersedia ke fungsi `login_user` tersebut.
+        - Buat berkas HTML dengan nama `login.html` pada folder `main/templates`. Lalu isi berkas tersebut dengan kode yang tersedia.
+        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `login_user`.
+        - Tambahkan path url ke dalam `urlpatterns` untuk mengakses fungsi yang sudah diimpor tadi.
+        - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `logout_user` yang menerima parameter `request`.
+        - Tambahkan import `logout`.
+        - Tambahkan kode yang tersedia ke dalam fungsi `logout_user` yang telah dibuat.
+        - Buka berkas `main.html` yang ada pada folder `main/templates`.
+        - Tambahkan potongan kode yang tersedia setelah *hyperlink tag* untuk *Add New Product* pada berkas `main.html`.
+        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `logout_user` yang telah dibuat.
+        - Tambahkan path url dalam `urlpatterns` untuk mengakses fungsi tersebut.
+
+    Checklist kedua:
+
+        - Buka `views.py` pada subdirektori `main` dan tambahkan import `login_required` pada bagian paling atas.
+        - Tambahkan kode `@login_required(login_url='/login')` di atas fungsi `show_main`.
+        - Jalankan prokyek Django dengan perintah `manage.py runserver` dan buka `http://localhost:8000/` di browser.
+        - Buat dua akun pengguna dengan menekan `Register Now`, lalu isi username dan password, kemudian klik daftar.
+        - Login dengan akun yang sudah dibuat.
+        - Buat tiga product baru dengan menekan `Add New Product`. 
+        - Logout lalu login kembali dengan akun lain yang telah dibuat, lalu buat tiga product lagi.
+    
+    Checklist ketiga:
+
+        - Buka `models.py` pada subdirektori `main` dan tambahkan kode untuk mengimpor model.
+        - Tambahkan potongan kode pada model `Product`.
+        - Buka `views.py` pada `main` dan ubah potongan kode pada fungsi `create_product` menjadi seperti yang tersedia.
+        - Ubah fungsi `show_main` menjadi seperti kode yange tersedia.
+        - Simpan semua perubahan, lalu migrasikan dengan `python manage.py makemigrations`.
+        - Saat muncul error. pilih `1`.
+        - Ketik angka `1` lagi untuk menetapkan user.
+        - Lakukan `python manage.py migrate` untuk mengaplikasikan migrasi.
+    
+    Checklist keempat:
+
+        - Lakukan logout pada aplikasi web.
+        - Buka `views.py` pada subdirektori `main` dan tambahkan import `HttpResponseRedirect`, `reverse`, dan `datetime`.
+        - Pada fungsi `login_user`, tambahkan fungsi untuk menambah cookie bernama `last_login` dengan cara mengganti kode yang ada pada blok `if user is not None` menjadi potongan kode seperti yang tersedia.
+        - Pada fungsi `show_main`, tambahkan potongan kode "`last_login`:request.COOKIES[`last_login`]" ke dalam variabel `context`.
+        - Ubah fungsi `logout_user` menjadi seperti yang tersedia.
+        - Buka `main.html` dan tambahkan potongan kode yang tersedia ke antara tabel dan tombol logout.
+        - Jalankan proyek Django dan coba untuk login.
+
+
