@@ -235,3 +235,135 @@ https://malaymart.adaptable.app
         - Jalankan proyek Django dan coba untuk login.
 
 
+# Tugas 5
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+    Element selector merupakan bagian dari CSS yang digunakan untuk memilih elemen HTML yang ingin kita styling. Setiap jenis selector memiliki manfaatnya masing-masing yang digunakan untuk kebutuhan desain dan tata letak halaman web. Berikut adalah beberapa manfaat dan waktu penggunaan dari berbagai element selector:
+
+    a. Universal selector (*)
+    - Manfaat: Dapat digunakan untuk memilih semua elemen dalam halaman web.
+    - Waktu penggunaan: Jika kita ingin menetapkan gaya tertentu pada seluruh elemen HTML di halaman web.
+
+    b. Type Selector
+    - Manfaat: Berguna untuk memilih semua elemen dengan tipe tertentu.
+    - Waktu penggunaan: Digunakan saat kita ingin menerapkan suatu gaya ke semua elemen dengan jenis tertentu.
+
+    c. Class selector
+    - Manfaat: Berguna untuk memilih semua elemen dengan atribut 'class' tertentu.
+    - Waktu penggunaan: Digunakan saat kita ingin memberikan suatu gaya ke semua elemen yang memiliki atribut 'class' yang sama.
+
+    d. ID Selector
+    - Manfaat: Berguna untuk memilih elemen dengan atribut 'id' tertentu.
+    - Waktu penggunaan: Digunakan saat kita ingin menerapkan gaya kepada elemen yang memiliki atribut 'id'.
+
+    e. Descendant Selector
+    - Manfaat: Memilih elemen yang mencadi child atau parent dari elemen lain.
+    - Waktu penggunaan: Digunakan saat ingin menerapkan gaya ke elemen yang berapa di dalam elemen lain.
+
+    f. Child Selector (>)
+    - Manfaat: Child selector ini memilih elemen yang menjadi child dari elemen lain.
+    - Waktu penggunaan: Ketika kita ingin memilih elemen yang menjadi anak langsung dari elemen lain, tanpa memilih elemen yang lebih dalam.
+
+    g. Adjacent Sibling Selector (+)
+    - Manfaat: Digunakan untuk memilih elemen yang merupakan sejajar dari elemen lain.
+    - Waktu penggunaan: Ketika ingin memilih elemen yang berada tepat setelah elemen lain.
+
+    h. General Sibling Selector (-)
+    - Manfaat: Memilih semua elemen saudara yang sejajar dengan elemen lain.
+    - Waktu penggunaan: Digunakan ketika kita ingin memilih semua elemen saudara yang sejajar dengan elemen lain dengan tipe yang sama.
+
+2. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+    Html5 memiliki banyak Tags yang memiliki fungsinya masing-masing dan dapat kita gunakan untuk membuat halaman web. Berikut adalah beberapa yang saya kenali:
+    - ``<a>`` = Mendefinisikan sebuah hyperlink.
+    - ``<button>`` = Membuat sebuah tombol yang dapat di klik.
+    - ``<div>`` = Digunakkan untuk menspesifikan pembagian section dalam dokumen.
+    - ``<h1>`` sampai ``<h6>`` = Medefinisikan headings HTML.
+    - ``<li>`` = Mendefinisikan list dari item.
+    - ``<nav>`` = Mendefinisikan bagian dari link navigasi.
+    - ``<p>`` = Mendefinisikan paragraf.
+    - ``<span>`` = Mendefinisikan section tanpa gaya yang sebaris dalam dokumen.
+    - ``<table>`` = Mendefinisikan tabel data.
+    - ``<td>`` = Mendefinisikan sebuah sel dalam tabel.
+    - ``<th>`` = mendefinisikan sel header dalam tabel.
+    - ``<tr>`` = Mendefinisikan sebuah baris sel dalam tabel.
+    - ``<ul>`` = Mendefinisikan list yang tidak terurut.
+
+3. Jelaskan perbedaan antara margin dan padding.
+    
+    Meskipun sama-sama digunakan untuk mengatur space kosong pada sebuah web, margin memiliki berbagai perbedaan dengan padding. Secara garis besar, margin digunakan untuk menata letak dari sisi luar, sedangkan padding digunakan untuk menata letak dari sisi dalam. Selain itu, terdapat perbedaan dalam warnanya, margin biasanya tidak memiliki warna, sedangkan padding dapat menggunakan unsur warna yang sesuai dengan warna background halamannya.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+    Tailwind dan Bootstrap merupakan framework CSS yang populer digunakan dalam pengembangan web untuk mempermudah desain dan programming. Perbedaan dari keduanya adalah:
+
+    a. Tingkat kustomisasi
+
+    Bootstrap memiliki desain yang sudah jadi dengan komponen-komponen yang sudah terancang secara bawaan, sehingga membatasi kustomisasi. Sedangkan Tailwind hanya memberikan alat-alat yang lebih dasar, yang memungkinkan kita membangun desain yang sesuai dengan kebutuhan.
+
+    b. Ukuran
+
+    Bootstrap memiliki ukuran yang lebih besar daripada Tailwind karena memiliki lebih banyak fitur dan komponen bawaan, sedangkan Tailwind lebih ringan karean hanya memberikan utilitas dasar.
+
+    c. Kesederhanaan
+
+    Bootstrap memiliki kode HTML yang lebih kompleks dan menghasilkan output yang lebih banyak, sedangkan Tailwind lebih sederhana dalam hal kode HTML yang digunakan.
+
+    Pertimbangan untuk menggunakan Bootstrap daripada Tailwind dan sebaliknya, didasari pada berbagai hal berikut:
+
+    **Gunakan Bootstrap jika:**
+
+    a. Memerlukan desain secara cepat dan siap pakai.
+
+    b. Proyek yang diinginkan membutuhkan banyak komponen siap pakai seperti tombol, form, dll.
+
+    c. Sudah memiliki pengalaman dengan Bootstrap atau sudah terbiasa.
+    
+    **Gunakan Tailwind jika:**
+
+    a. Memerlukan tingkat kustomisasi yang tinggi dan ingin membuat desain yang unik.
+
+    b. Ingin ukuran dari situs web lebih kecil dan efisien.
+
+    c. Apabila kita ingin menghindari desain bawaan dan lebih suka membuat dari scratch.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    Checklist Pertama: 
+
+    - Buka projek Django, lalu buka berkas `base.html` yang terdapat pada folder `templates` di root folder projek.
+    - Menambahkan tag `<meta name="viewport">` agar halaman web dapat menyesuaikan ukuran dan perilaku perangkat mobile.
+    - Menambahkan Bootstrap CSS dan juga JS.
+    - Menambahkan 2 barist script JS seperti yang tersedia untuk menggunakan dropdowns, popover, tooltips yang disediakan framework Bootstrap.
+    - Menambahkan navbar yang memiliki tombol `home` dan `logout` ke dalam berkas `main.html`.       
+        ```
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">{{name}}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>```
+    - Mengubah background menjadi dark dengan kode dibawah
+        ``` 
+        <div class="text-bg-dark p-3">
+        ```
+    - Menambahkan Card untuk menampilkan produk-produk yang telah dibuat dengan kode dibawah
+        ``` 
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Dark card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        ```
