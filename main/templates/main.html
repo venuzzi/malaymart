@@ -18,76 +18,110 @@
     </div>
 </nav>
 
-<div class="text-bg-dark p-3">
+<table id="product_table"></table>
 
-    <table class = "table-dark">
-        <h1>Malaymart Page</h1>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
     
-        <h5>Name:</h5>
-        <p>{{name}}</p>
-    
-        <h5>Class:</h5>
-        <p>{{class}}</p>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+    async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        let htmlString = `
+            <p><b>Malaymart Page</b></p>
+
+            <p><b>Name:</b> {{name}}</p>
         
-        <table class="table table-borderless">
-            <tr>
-                <!-- <th>Name</th>
-                <th>Price</th>
-                <th>Description</th> -->
-                <!-- <th>Date Added</th> -->
-            </tr>
-    
-            {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
-            {% for product in products %}
+            <p><b>Class:</b> {{class}}</p>
+
+            <p><b>List of items:</b></p>
             
-            <tr>
+        `
+
+        products.forEach((item) => {
+            htmlString += `\n<tr>
                 <td>
                     <div class="card border-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">{{product.name}}</div>
+                        <div class="card-header">${item.fields.name}</div>
                         <div class="card-body">
-                            <h5 class="card-title">Harga: {{product.price}} </h5>
-                            <p class="card-text">{{product.description}} Added on: {{product.date_added}} </p>
+                            <div class="card-text">
+                                <p><b>Date Added: </b>${item.fields.date_added}</p>
+                                <p><b>Harga: </b>${item.fields.price}</p>
+                                <b>Description:</b>
+                                <p>${item.fields.description}</p>
+                            </div>
                         </div>
                     </div>
                 </td>
-                
-                    <!-- <td>{{product.name}}</td> -->
-                    <!-- <td>{{product.price}}</td> -->
-                    <!-- <td>{{product.description}}</td> -->
-                    <!-- <td>{{product.date_added}}</td> -->
-                    <td>
-                        <a href="{% url 'main:edit_product' product.pk %}">
-                            <button type="button" class="btn btn-warning">
-                                Edit
-                            </button>
-                        </a>
-                        <a href="{% url 'main:delete_product' product.pk %}">
-                            <button type="button" class="btn btn-danger">
-                                Delete
-                            </button>
-                        </a>
-                    </td>
-            </tr>
-            {% endfor %}
-        </table>
-    
-        <br />
-    
-        <a href="{% url 'main:create_product' %}">
-            <button>
-                Add New Product
-            </button>
-        </a>
-    
+                <td>
+                    <a href="/edit-product/${item.pk}">
+                        <button>Edit</button>
+                    </a>
+                    <a href="/delete/${item.pk}">
+                        <button>Delete</button>
+                    </a>
+                </td>
+            </tr>` 
+        })
         
-        <a href="{% url 'main:logout' %}">
-            <button>
-                Logout
-            </button>
-        </a>
-    
-        <h5>Sesi terakhir login: {{ last_login }}</h5>
-    
-    {% endblock content %}
-</div>
+        document.getElementById("product_table").innerHTML = htmlString
+    }
+
+    refreshProducts()
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+        
+        document.getElementById("form").reset()
+        return false
+        
+    }
+
+    document.getElementById("button_add").onclick = addProduct
+</script>
+
+{% endblock content %}

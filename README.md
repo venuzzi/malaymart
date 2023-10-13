@@ -182,57 +182,57 @@ https://malaymart.adaptable.app
 
     Checklist pertama: 
     
-        - Jalankan virtual environment.
-        - Buka berkas `views.py` di subdirektori `main`.
-        - Tambahkan import `redirect`, `UserCreationForm`, dan `messages`.
-        - Tambahkan potongan kode yang tersedia ke dalam fungsi `register`.
-        - Buat berkas HTML dengan nama `register.html` pada folder `main/templates` dan isi dengan kode yang tersedia.
-        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `register` yang telah dibuat.
-        - Tambahkan path url ke dalam `urlpatterns`.
-        - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `login_user` yang menerima parameter `request`.
-        - Tambahkan import `aunthenticate` dan `login`.
-        - Tambahkan kode yang tersedia ke fungsi `login_user` tersebut.
-        - Buat berkas HTML dengan nama `login.html` pada folder `main/templates`. Lalu isi berkas tersebut dengan kode yang tersedia.
-        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `login_user`.
-        - Tambahkan path url ke dalam `urlpatterns` untuk mengakses fungsi yang sudah diimpor tadi.
-        - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `logout_user` yang menerima parameter `request`.
-        - Tambahkan import `logout`.
-        - Tambahkan kode yang tersedia ke dalam fungsi `logout_user` yang telah dibuat.
-        - Buka berkas `main.html` yang ada pada folder `main/templates`.
-        - Tambahkan potongan kode yang tersedia setelah *hyperlink tag* untuk *Add New Product* pada berkas `main.html`.
-        - Buka `urls.py` pada subdirektori `main` dan impor fungsi `logout_user` yang telah dibuat.
-        - Tambahkan path url dalam `urlpatterns` untuk mengakses fungsi tersebut.
+    - Jalankan virtual environment.
+    - Buka berkas `views.py` di subdirektori `main`.
+    - Tambahkan import `redirect`, `UserCreationForm`, dan `messages`.
+    - Tambahkan potongan kode yang tersedia ke dalam fungsi `register`.
+    - Buat berkas HTML dengan nama `register.html` pada folder `main/templates` dan isi dengan kode yang tersedia.
+    - Buka `urls.py` pada subdirektori `main` dan impor fungsi `register` yang telah dibuat.
+    - Tambahkan path url ke dalam `urlpatterns`.
+    - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `login_user` yang menerima parameter `request`.
+    - Tambahkan import `aunthenticate` dan `login`.
+    - Tambahkan kode yang tersedia ke fungsi `login_user` tersebut.
+    - Buat berkas HTML dengan nama `login.html` pada folder `main/templates`. Lalu isi berkas tersebut dengan kode yang tersedia.
+    - Buka `urls.py` pada subdirektori `main` dan impor fungsi `login_user`.
+    - Tambahkan path url ke dalam `urlpatterns` untuk mengakses fungsi yang sudah diimpor tadi.
+    - Buka `views.py` pada subdirektori `main` dan buat fungsi dengan nama `logout_user` yang menerima parameter `request`.
+    - Tambahkan import `logout`.
+    - Tambahkan kode yang tersedia ke dalam fungsi `logout_user` yang telah dibuat.
+    - Buka berkas `main.html` yang ada pada folder `main/templates`.
+    - Tambahkan potongan kode yang tersedia setelah *hyperlink tag* untuk *Add New Product* pada berkas `main.html`.
+    - Buka `urls.py` pada subdirektori `main` dan impor fungsi `logout_user` yang telah dibuat.
+    - Tambahkan path url dalam `urlpatterns` untuk mengakses fungsi tersebut.
 
     Checklist kedua:
 
-        - Buka `views.py` pada subdirektori `main` dan tambahkan import `login_required` pada bagian paling atas.
-        - Tambahkan kode `@login_required(login_url='/login')` di atas fungsi `show_main`.
-        - Jalankan prokyek Django dengan perintah `manage.py runserver` dan buka `http://localhost:8000/` di browser.
-        - Buat dua akun pengguna dengan menekan `Register Now`, lalu isi username dan password, kemudian klik daftar.
-        - Login dengan akun yang sudah dibuat.
-        - Buat tiga product baru dengan menekan `Add New Product`. 
-        - Logout lalu login kembali dengan akun lain yang telah dibuat, lalu buat tiga product lagi.
-    
+    - Buka `views.py` pada subdirektori `main` dan tambahkan import `login_required` pada bagian paling atas.
+    - Tambahkan kode `@login_required(login_url='/login')` di atas fungsi `show_main`.
+    - Jalankan prokyek Django dengan perintah `manage.py runserver` dan buka `http://localhost:8000/` di browser.
+    - Buat dua akun pengguna dengan menekan `Register Now`, lalu isi username dan password, kemudian klik daftar.
+    - Login dengan akun yang sudah dibuat.
+    - Buat tiga product baru dengan menekan `Add New Product`. 
+    - Logout lalu login kembali dengan akun lain yang telah dibuat, lalu buat tiga product lagi.
+
     Checklist ketiga:
 
-        - Buka `models.py` pada subdirektori `main` dan tambahkan kode untuk mengimpor model.
-        - Tambahkan potongan kode pada model `Product`.
-        - Buka `views.py` pada `main` dan ubah potongan kode pada fungsi `create_product` menjadi seperti yang tersedia.
-        - Ubah fungsi `show_main` menjadi seperti kode yange tersedia.
-        - Simpan semua perubahan, lalu migrasikan dengan `python manage.py makemigrations`.
-        - Saat muncul error. pilih `1`.
-        - Ketik angka `1` lagi untuk menetapkan user.
-        - Lakukan `python manage.py migrate` untuk mengaplikasikan migrasi.
-    
+    - Buka `models.py` pada subdirektori `main` dan tambahkan kode untuk mengimpor model.
+    - Tambahkan potongan kode pada model `Product`.
+    - Buka `views.py` pada `main` dan ubah potongan kode pada fungsi `create_product` menjadi seperti yang tersedia.
+    - Ubah fungsi `show_main` menjadi seperti kode yange tersedia.
+    - Simpan semua perubahan, lalu migrasikan dengan `python manage.py makemigrations`.
+    - Saat muncul error. pilih `1`.
+    - Ketik angka `1` lagi untuk menetapkan user.
+    - Lakukan `python manage.py migrate` untuk mengaplikasikan migrasi.
+
     Checklist keempat:
 
-        - Lakukan logout pada aplikasi web.
-        - Buka `views.py` pada subdirektori `main` dan tambahkan import `HttpResponseRedirect`, `reverse`, dan `datetime`.
-        - Pada fungsi `login_user`, tambahkan fungsi untuk menambah cookie bernama `last_login` dengan cara mengganti kode yang ada pada blok `if user is not None` menjadi potongan kode seperti yang tersedia.
-        - Pada fungsi `show_main`, tambahkan potongan kode "`last_login`:request.COOKIES[`last_login`]" ke dalam variabel `context`.
-        - Ubah fungsi `logout_user` menjadi seperti yang tersedia.
-        - Buka `main.html` dan tambahkan potongan kode yang tersedia ke antara tabel dan tombol logout.
-        - Jalankan proyek Django dan coba untuk login.
+    - Lakukan logout pada aplikasi web.
+    - Buka `views.py` pada subdirektori `main` dan tambahkan import `HttpResponseRedirect`, `reverse`, dan `datetime`.
+    - Pada fungsi `login_user`, tambahkan fungsi untuk menambah cookie bernama `last_login` dengan cara mengganti kode yang ada pada blok `if user is not None` menjadi potongan kode seperti yang tersedia.
+    - Pada fungsi `show_main`, tambahkan potongan kode "`last_login`:request.COOKIES[`last_login`]" ke dalam variabel `context`.
+    - Ubah fungsi `logout_user` menjadi seperti yang tersedia.
+    - Buka `main.html` dan tambahkan potongan kode yang tersedia ke antara tabel dan tombol logout.
+    - Jalankan proyek Django dan coba untuk login.
 
 
 # Tugas 5
@@ -367,3 +367,48 @@ https://malaymart.adaptable.app
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         ```
+
+# Tugas 6
+
+1. **Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.**
+
+    Asynchronous = Dalam *asynchronous programming*, kode dieksekusi bersamaan tanpa harus menunggu satu selesai sebelum yang lain dimulai. Selain itu, memungkinkan program untuk tetap responsif, bahkan selama operasi yang memakan waktu berlangsung.
+
+    Synchronous = Dalam *synchronous programming*, kode-kode dieksekusi secara berurutan, tugas pertama harus selesai sebelum tugas berikutnya dimulai. Selain itu, program ini juga tidak responsif jika ada operasi yang memakan waktu lama, seperti mengunduh data besar atau operasi disk intensif.
+
+2. **Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+
+    Paradigma *event-driven programming* merupakan sebuah paradigma di mana alur program ditentukan oleh peristiwa yang terjadi. Peristiwa ini dapat berupa interaksi pengguna, keluaran sensor, atau pesan dari program atau thread lain.Contoh penerapannya dalam tugas ini antara lain penggunaan tombol ``Add Product by AJAX`` pada berkas ``main.html``, di mana apabila pengguna menekan tombol tersebut, maka suatu hal akan terjadi yaitu pembukaan modal untuk formulir.
+
+3.  **Jelaskan penerapan asynchronous programming pada AJAX.**
+
+    Pada penerapannya dalam AJAX, asynchronous programming merupakan sebuah proses yang berjalan dijalankan oleh JavaScript secara bersamaan dan tidak menunggu satu sama lain untuk selesai. Dengan begitu, asynchronous programming digunakan untuk membuat program yang lebih responsif dan efisien. Beberapa contoh penerapannya adalah menampilkan data secara real-time, menampilkan data dari sumber yang berbeda, dan melakukan tugas yang memakan waktu namun tetap bisa berinteraksi dengan webnya.
+
+4. **Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+
+    Fetch API menyediakan cara yang sederhana dan konsisten untuk membuat permintaan HTTP dari JavaScript. Fetch API ini memiliki fitur seperti membuat permintaan HTTP, menanganai respons HTTP, dan *caching* respons HTTP. Sedangkan library JQuery adalah paket library *third party* yang menyediakan berbagai fitur seperti membuat permintaan HTTP, menangani respons HTTP, *caching* respons HTTP, penanganan error, dan penanganan *caching*. Fetch API digunakan pada tugas PBP ini dikarenakan kesederhanaan dan fleksibilitas yang dimiliki oleh programnya. Selain itu pula Fetch API relatif lebih ringan dibandingkan JQuery dengan berkas-berkas di dalam Fetch API memiliki ukuran yang kecil.
+
+5. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+
+    Checklist AJAX GET:
+    - Buka berkas `views.py` dan buat fungsi dengan nama `get_product_json` yang menerima parameter `request`.
+    - Buka berkas `main.html` dan menambahkan tag `<script>` yang diisi dengan bahasa JavaScript. 
+    - Masih dalam `main.html`, di dalam tag `<script>`, buat fungsi `getProducts()` yang bersifat asinkronus dengan menggunakan `async`.
+    - Kemudian buat fungsi `refreshProducts()` di dalam tag `<script>` untuk melakukan *refresh* produk secara asinkronus.
+
+    Checklist AJAX POST:
+    - Hapus bagian kode *table* yang sudah dibuat pada tugas sebelumnya, dan tambahkan kode *table* yang baru.
+    - Tambahkan kode yang tersedia untuk mengimplementasikan modal.
+    - Buat fungsi baru pada `<script>` dengan nama `addProduct()` dan isi dengan kode yang tersedia.
+    - Tambahkan fungsi `onclick` pada tombol `Add Product` pada modal untuk menjalankan fungsi `addProduct()` dengan menambahkan kode yang tersedia.
+    - Kustomisasi tampilan *list items* dengan menggunakan Bootstrap *card* dengan cara menambahkannya pada bagian iterasi item di `<script>`.
+
+    Checklist collectstatic:
+    - Buka berkas `settings.py` pada direktori proyek, kemudian buat variabel `STATIC_ROOT` yang saya isi dengan `staticfiles/` dibawah variabel `STATIC_URL` untuk mengalokasikan pembuatan berkas-berkas *static* ke dalam path `STATIC_ROOT`. 
+    - Setelah itu menjalankan perintah `python manage.py collecstatic` yang kemudian mengumpulkan semua berkas static dari setiap aplikasi ke dalam direktori `staticfiles`.
+
+
+        
+
+
+
